@@ -56,8 +56,10 @@ def display_tap_count():
     color('black')
     write('Taps: ' + str(tap_count), align='center',
           font=('Arial', 20, 'normal'))
+
+
 def draw():
-    "Draw image and tiles."
+    """Draw image and tiles."""
     clear()
     goto(0, 0)
     shape(car)
@@ -77,8 +79,21 @@ def draw():
         color('black')
         write(tiles[mark], font=('Arial', 30, 'normal'))
 
+#Se define una varible en la cual se cuentan si los objetos de la lista hide tienen valor TRUE, 
+#al llegar a 0, se procede a llamar a la funcion que imprime el mensaje final
+    if all(not x for x in hide): 
+        display_final()
+
+    display_tap_count()
     update()
     ontimer(draw, 100)
+#Funcion para imprimir el mensaje final
+def display_final():
+    up()
+    goto(0, 0)
+    color('white')
+    write('Todos los cuadros han sido destapados', align='center',
+          font=('Arial', 15, 'normal'))
 
 shuffle(tiles)
 setup(420, 420, 370, 0)
