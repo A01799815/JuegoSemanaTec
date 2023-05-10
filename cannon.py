@@ -48,10 +48,12 @@ def move():
 
     dupe = targets.copy()
     targets.clear()
+    
+"""Al eliminar el siguinte ciclo for del codigo, se logra que el juego no termine"""
 
-    for target in dupe:
+    """for target in dupe:
         if abs(target - ball) > 13:
-            targets.append(target)
+            targets.append(target)"""
 
     draw()
 
