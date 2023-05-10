@@ -1,14 +1,17 @@
 from random import *
 from turtle import *
+
 from freegames import path
 
 car = path('car.gif')
 tiles = list(range(32)) * 2
 state = {'mark': None}
 hide = [True] * 64
+tap_count = 0 #Se define la variable para contar los tabs
+
 
 def square(x, y):
-    "Draw white square with black outline at (x, y)."
+    """Draw white square with black outline at (x, y)."""
     up()
     goto(x, y)
     down()
@@ -19,16 +22,21 @@ def square(x, y):
         left(90)
     end_fill()
 
+
 def index(x, y):
-    "Convert (x, y) coordinates to tiles index."
+    """Convert (x, y) coordinates to tiles index."""
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
+
 def xy(count):
-    "Convert tiles count to (x, y) coordinates."
+    """Convert tiles count to (x, y) coordinates."""
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
+
 def tap(x, y):
-    "Update mark and hidden tiles based on tap."
+    """Update mark, hidden tiles, and tap count based on tap."""
+    global tap_count
+    tap_count += 1 #Tras ejecutarse la función, la variable adquiere un nuevo valor
     spot = index(x, y)
     mark = state['mark']
 
@@ -38,7 +46,16 @@ def tap(x, y):
         hide[spot] = False
         hide[mark] = False
         state['mark'] = None
+        
 
+#Imprime el contador de TAPS en la pantalla del juego 
+def display_tap_count():
+    
+    up()
+    goto(0, -180)
+    color('black')
+    write('Taps: ' + str(tap_count), align='center',
+          font=('Arial', 20, 'normal'))
 def draw():
     "Draw image and tiles."
     clear()
