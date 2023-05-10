@@ -11,7 +11,9 @@ tap_count = 0 #Se define la variable para contar los tabs
 
 
 def square(x, y):
-    """Draw white square with black outline at (x, y)."""
+    '''Dibuja recuadro en la coordenada indicada
+    x: coordenada X
+    y: coordenada y'''
     up()
     goto(x, y)
     down()
@@ -24,17 +26,17 @@ def square(x, y):
 
 
 def index(x, y):
-    """Convert (x, y) coordinates to tiles index."""
+    """Convierte coordenadas (x,y) en indice de recuadro"""
     return int((x + 200) // 50 + ((y + 200) // 50) * 8)
 
 
 def xy(count):
-    """Convert tiles count to (x, y) coordinates."""
+    """Convierte indice de recuadro en coordernadas (x,y)"""
     return (count % 8) * 50 - 200, (count // 8) * 50 - 200
 
 
 def tap(x, y):
-    """Update mark, hidden tiles, and tap count based on tap."""
+    """Actualiza Mark, recuadros ocultos y cuenta de clics."""
     global tap_count
     tap_count += 1 #Tras ejecutarse la función, la variable adquiere un nuevo valor
     spot = index(x, y)
@@ -50,7 +52,7 @@ def tap(x, y):
 
 #Imprime el contador de TAPS en la pantalla del juego 
 def display_tap_count():
-    
+    ''' Muestra la cuenta de clics'''
     up()
     goto(0, -180)
     color('black')
@@ -59,7 +61,7 @@ def display_tap_count():
 
 
 def draw():
-    """Draw image and tiles."""
+    """Dibuja la imagen y los recuadros, muestra el numero del indice del recuadro"""
     clear()
     goto(0, 0)
     shape(car)
@@ -75,9 +77,9 @@ def draw():
     if mark is not None and hide[mark]:
         x, y = xy(mark)
         up()
-        goto(x + 2, y)
+        goto(x+25,y) # Ubica la tortuga a la mitad de cada recuadro (coordenada x + 25 puntos)
         color('black')
-        write(tiles[mark], font=('Arial', 30, 'normal'))
+        write(tiles[mark], font=('Arial', 30, 'normal'),align="center") #Escribe el numero centrado
 
 #Se define una varible en la cual se cuentan si los objetos de la lista hide tienen valor TRUE, 
 #al llegar a 0, se procede a llamar a la funcion que imprime el mensaje final
