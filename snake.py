@@ -1,10 +1,24 @@
 from turtle import *
-from random import randrange
+from random import randrange, choice
 from freegames import square, vector
+
+#Lista que contiene los colores psoibles a aparecer
+colors = ['blue', 'green', 'purple', 'orange', 'yellow']
+#Funcion que escoje un color de la lista
+def generate_color():
+    return choice(colors)
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+
+# Genera los colores aleatorios para cada vairable
+snake_color = generate_color()
+food_color = generate_color()
+
+# Se comprueba que los colores generados son diferentes, de lo contrario se cambia el color de la comida 
+if snake_color == food_color:
+    food_color = generate_color()
 
 def change(x, y):
     "Change snake direction."
@@ -31,15 +45,16 @@ def move():
         print('Snake:', len(snake))
         food.x = randrange(-15, 15) * 10
         food.y = randrange(-15, 15) * 10
+
     else:
         snake.pop(0)
 
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, snake_color)
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, food_color)
     update()
     ontimer(move, 100)
 
@@ -53,3 +68,4 @@ onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
 move()
 done()
+
