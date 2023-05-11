@@ -27,6 +27,7 @@ def circle(start, end):
 
 #Se utliza el mismo metodo del cuadrado, sin embargo añadiento las coordenadas en y para poder hacer el rectangulo y cambiando el rango de lineas a dibujar 
 def rectangle(start, end):
+    "Draw rectangle from start to end."
     up()
     goto(start.x, start.y)
     down()
@@ -37,10 +38,21 @@ def rectangle(start, end):
         forward(end.y - start.y)
         left(90)
     end_fill()
-
+    
+#Se utliza el mismo metodo del cuadrado, pero, se cambia el cambia el rango para que dibuje 3 lineas y el angulo left cambiarlo a 120
 def triangle(start, end):
     "Draw triangle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(3):
+        forward(end.x - start.x)
+        left(120)
+
+    end_fill()
+
 
 def tap(x, y):
     "Store starting point or draw shape."
