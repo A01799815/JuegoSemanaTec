@@ -21,9 +21,18 @@ def square(start, end):
 
     end_fill()
 
+#Se utliza el mismo metodo del cuadrado, cambiando el ciclo for, pues este debera ser de 360 y el valor del radio de esta sera la diferencia entre los dos vectores como radio del circulo 
 def circle(start, end):
     "Draw circle from start to end."
-    pass  # TODO
+    up()
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+
+    for count in range(360):
+        forward(1)
+        left(1)
+    end_fill()
 
 #Se utliza el mismo metodo del cuadrado, sin embargo añadiento las coordenadas en y para poder hacer el rectangulo y cambiando el rango de lineas a dibujar 
 def rectangle(start, end):
