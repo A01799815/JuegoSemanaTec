@@ -111,8 +111,10 @@ def move():
     goto(pacman.x + 10, pacman.y + 10)
     dot(20, 'yellow')
 
+    speed = 1 # Factor para la velocidad de los fantasmas
     for point, course in ghosts:
         if valid(point + course):
+            course = course
             point.move(course)
         else:
             options = [
@@ -127,14 +129,15 @@ def move():
             if pacman.x <= point.x or pacman.y <= point.y:
                 plan = choice([options[1],options[3]])
 
-            elif pacman.x >= point.x or pacman.y >= point.y:
+            elif pacman.x > point.x or pacman.y > point.y:
                 plan = choice([options[0],options[2]])
-                
-            course.x = plan.x
-            course.y = plan.y               
+            
+            #El factor speed aumenta el avance de los fantasmas en cada repeticion    
+            course.x = plan.x * speed
+            course.y = plan.y * speed
 
         up()
-        goto(point.x + 10, point.y + 10)  # Aumenta el valor del movimiento para fantasmas mas rapidos.
+        goto(point.x + 10, point.y + 10)
         dot(20, 'red')
 
     update()
