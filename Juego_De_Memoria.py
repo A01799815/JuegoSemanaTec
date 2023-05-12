@@ -105,3 +105,8 @@ tracer(False)
 onscreenclick(tap)
 draw()
 done()
+
+#4. Como un elmento de innovación al juego, podrías utilizar algo diferente a los dígitos para resolver el juego
+# y que al usuario le ayude a tener mejor memoria?
+# Se podria asignar colores a los numeros o al voltear las casillas, usando colores similares para numeros cercanos entre si para
+# ubicarlos y distinguirlos de otros alrededor mas facilmente.
