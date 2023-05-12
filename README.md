@@ -17,37 +17,37 @@ con el fin de que mejoremos nuestras habilidades de logica y programación, adem
 <ol>
   <li>Paint</li>
   En este juego se solicito que se añadiera:
-  <ol>
+  <ul>
     <li>Un color nuevo</li>
     <li>Dibujar un circulo</li>
     <li>Completar el rectangulo</li>
     <li>Completar el triangulo</li>
-  </ol>
+  </ul>
   <li>Snake</li>
   En este juego se solicito que se añadiera:
-  <ol>
+  <ul>
     <li>La comida podrá moverse al azar un paso a la vez y no deberá de salirse de la ventana</li>
     <li>Cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes entre sí, pero al azar, de una serie de 5 diferentes colores, excepto el rojo</li>
-  </ol>
+  </ul>
   <li>Pacman</li>
   En este juego se solicito que se añadiera:
-  <ol>
+  <ul>
     <li>Los fantasmas sean más listos</li>
     <li>Cambiar el tablero</li>
     <li>Historia de los commits del repositorio</li>
-  </ol>
+  </ul>
   <li>Cannon</li>
   En este juego se solicito que se añadiera:
-  <ol>
+  <ul>
     <li>La velocidad del movimiento para el proyectil y los balones sea más rápida</li>
     <li>Hacer que el juego nunca termine, de manera que los balones al salir de la ventana se re posicionen.</li>
-  </ol>
+  </ul>
   <li>Memory</li>
   En este juego se solicito que se añadiera:
-  <ol>
+  <ul>
     <li>La velocidad del movimiento para el proyectil y los balones sea más rápida</li>
     <li>Hacer que el juego nunca termine, de manera que los balones al salir de la ventana se re posicionen.</li>
-  </ol>
+  </ul>
 </ol> 
 
  ## Preparación del ambiente
