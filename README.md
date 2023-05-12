@@ -23,12 +23,14 @@ con el fin de que mejoremos nuestras habilidades de logica y programación, adem
     <li>Completar el rectangulo</li>
     <li>Completar el triangulo</li>
   </ul>
+  En este juego, gracias a funciones ya existentes, se pudo trabajar con estas para modificarlas y poder asi obtener los puntos solicitados. 
   <li>Snake</li>
   En este juego se solicito que se añadiera:
   <ul>
     <li>La comida podrá moverse al azar un paso a la vez y no deberá de salirse de la ventana</li>
     <li>Cada vez que se corra el juego, la víbora y la comida deberán tener colores diferentes entre sí, pero al azar, de una serie de 5 diferentes colores, excepto el rojo</li>
   </ul>
+  Fue necesario el pensamiento logico, para asi poder crear nuevas funciones que afectaran al codigo y cumplir asi los puntos solicitados. 
   <li>Pacman</li>
   En este juego se solicito que se añadiera:
   <ul>
@@ -36,18 +38,23 @@ con el fin de que mejoremos nuestras habilidades de logica y programación, adem
     <li>Cambiar el tablero</li>
     <li>Historia de los commits del repositorio</li>
   </ul>
+  Se modifico el codigo ya establecido, ademas, se añadio algo de pensamieto logico, para hacer que el fantasma volte hacia donde esta pacman y tome una decisión al topar con pared.
   <li>Cannon</li>
   En este juego se solicito que se añadiera:
   <ul>
     <li>La velocidad del movimiento para el proyectil y los balones sea más rápida</li>
     <li>Hacer que el juego nunca termine, de manera que los balones al salir de la ventana se re posicionen.</li>
   </ul>
+  Se elimino una parte del codigo, para lograr la continuación del juego, ademas de modificar calores dentro de este codigo para hacer el juego mas rapido. 
   <li>Memory</li>
   En este juego se solicito que se añadiera:
   <ul>
-    <li>La velocidad del movimiento para el proyectil y los balones sea más rápida</li>
-    <li>Hacer que el juego nunca termine, de manera que los balones al salir de la ventana se re posicionen.</li>
+    <li>Contar y desplegar el numero de taps</li>
+    <li>Detectar cuando todos los cuadros se han destapado</li>
+    <li>Centrar el dígito en el cuadro</li>
+    <li>Como un elmento de innovación al juego, podrías utilizar algo diferente a los dígitos para resolver el juego y que al usuario le ayude a tener mejor memoria?</li>
   </ul>
+  Mediante las funciones que ya existen en el codigo, se manipularon para agregar los puntos solicitados. <br> En el ultimo punto solicitado, se podria asignar colores a los numeros o al voltear las casillas, usando colores similares para numeros cercanos entre si para ubicarlos y distinguirlos de otros alrededor mas facilmente.
 </ol> 
 
  ## Preparación del ambiente
