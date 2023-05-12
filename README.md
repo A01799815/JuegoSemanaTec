@@ -57,7 +57,7 @@ con el fin de que mejoremos nuestras habilidades de logica y programación, adem
   <li>Instalación de PIP</li>
  </ul>
  
- ## Instalación 🔧
+ ## Instalación 
 
 Para reafirmar que la instalación de pip haya sido correcta y completa, nos podemos apoyar del siguiente comando que rectificara la versión de pip instalada en el dispositivo:
 
@@ -71,7 +71,7 @@ Tras obtener la ultima versión de Python 3.X que trae consigo el instalador "pi
 python3 -m pip install freegames
 ```
 
-## Ejecutando las pruebas - Librería freegames ⚙️
+## Ejecutando las pruebas - Librería freegames 
 
 Para consultar el contenido de la librería es posible usar este comando que desplegará la lista de todos los juegos incluidos en la librería:
 ```
