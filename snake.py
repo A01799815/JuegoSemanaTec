@@ -17,7 +17,7 @@ aim = vector(0, -10)
 snake_color = generate_color()
 food_color = generate_color()
 
-# Se comprueba que los colores generados son diferentes, de lo contrario se cambia el color de la comida 
+# Se comprueba que los colores generados son diferentes, de lo contrario se cambia el color de la comida. 
 if snake_color == food_color:
     food_color = generate_color()
 
@@ -58,7 +58,7 @@ def move():
         food.x += dx
         food.y += dy
 
-    # Verificar límites de la ventana y hacer que la comida rebote
+    # Verificar límites de la ventana y hacer que la comida se mueva.
     if not inside(food):
         if food.x < -200 or food.x > 190:
             dx = -dx
