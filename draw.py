@@ -2,14 +2,14 @@ from turtle import *
 from freegames import vector
 
 def line(start, end):
-    "Draw line from start to end."
+    "Dibuja una linea desde el punto inicial al punto final"
     up()
     goto(start.x, start.y)
     down()
     goto(end.x, end.y)
 
 def square(start, end):
-    "Draw square from start to end."
+    "Dibuja un cuadrado desde el punto inicial al punto final"
     up()
     goto(start.x, start.y)
     down()
@@ -21,20 +21,22 @@ def square(start, end):
 
     end_fill()
 
-#Se utliza el mismo metodo del cuadrado, cambiando el ciclo for, pues este debera ser de 360 y el valor del radio de esta sera la diferencia entre los dos vectores como radio del circulo 
-def circle(start, end):
-    "Draw circle from start to end."
+#Se renombro la funcion como 'circle_' para evitar errores en la ejecucion al usar tambien la funcion predeterminada circle()
+def circle_(start, end):    
+    "Dibuja un circulo desde el punto inicial alrededor del punto indicado como punto final"
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
-
-    for count in range(360):
-        forward(1)
-        left(1)
+    
+    radius = abs(start - end)
+    circle(radius)
+    
     end_fill()
+    
 
-#Se utliza el mismo metodo del cuadrado, sin embargo añadiento las coordenadas en y para poder hacer el rectangulo y cambiando el rango de lineas a dibujar 
+#Se utliza el mismo metodo del cuadrado, sin embargo añadiento las coordenadas en y para poder hacer el rectangulo 
+# y cambiando el rango de lineas a dibujar 
 def rectangle(start, end):
     "Draw rectangle from start to end."
     up()
@@ -48,7 +50,8 @@ def rectangle(start, end):
         left(90)
     end_fill()
     
-#Se utliza el mismo metodo del cuadrado, pero, se cambia el cambia el rango para que dibuje 3 lineas y el angulo left cambiarlo a 120
+#Se utliza el mismo metodo del cuadrado, pero, se cambia el cambia el rango para que dibuje 3 lineas y 
+# el angulo left cambiarlo a 120
 def triangle(start, end):
     "Draw triangle from start to end."
     up()
@@ -92,7 +95,7 @@ onkey(lambda: color('red'), 'R')
 onkey(lambda: color('purple'), 'P') #### Se añadio un nuevo color
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', circle_), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
