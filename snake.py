@@ -2,17 +2,18 @@ from turtle import *
 from random import randrange, choice
 from freegames import square, vector
 
-#Lista que contiene los colores psoibles a aparecer
+#Lista que contiene los colores posibles para la serpiente y la comida
 colors = ['blue', 'green', 'purple', 'orange', 'yellow']
-#Funcion que escoje un color de la lista
+
 def generate_color():
+    "Funcion que escoge un color de la lista"
     return choice(colors)
 
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
-# Genera los colores aleatorios para cada vairable
+# Genera los colores aleatorios para cada variable
 snake_color = generate_color()
 food_color = generate_color()
 
@@ -21,16 +22,16 @@ if snake_color == food_color:
     food_color = generate_color()
 
 def change(x, y):
-    "Change snake direction."
+    "Cambia la direccion del movimiento de la serpiente"
     aim.x = x
     aim.y = y
 
 def inside(head):
-    "Return True if head inside boundaries."
+    "TRUE si la cabeza de la serpiente esta dentro del area de juego"
     return -200 < head.x < 190 and -200 < head.y < 190
 
 def move():
-    "Move snake forward one segment."
+    "Mover la serpiente una casilla"
     head = snake[-1].copy()
     head.move(aim)
 
@@ -50,6 +51,22 @@ def move():
         snake.pop(0)
 
     clear()
+    
+    # Generar movimientos aleatorios de la comida. Se ejecuta aleatoriamente una de cada 10 veces para reducir la velocidad
+    if(choice(range(10))) == 0:
+        dx, dy = choice([-10, 0, 10]), choice([-10, 0, 10])
+        food.x += dx
+        food.y += dy
+
+    # Verificar límites de la ventana y hacer que la comida rebote
+    if not inside(food):
+        if food.x < -200 or food.x > 190:
+            dx = -dx
+        if food.y < -200 or food.y > 190:
+            dy = -dy
+        food.x += dx
+        food.y += dy
+
 
     for body in snake:
         square(body.x, body.y, 9, snake_color)
