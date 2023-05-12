@@ -85,5 +85,7 @@ Los juegos se pueden modificar copiando su código fuente, este se puede obtener
 ```
 python3 -m freegames copy snake
 python3 snake.py
-
-  
+```
+## Autores
+#### José Eduardo Rosas Ponciano - A01784461
+#### Cesar Antonio Espinosa Madrid - A01799815
