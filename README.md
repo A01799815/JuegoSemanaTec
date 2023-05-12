@@ -96,3 +96,6 @@ python3 snake.py
 ## Autores
 #### José Eduardo Rosas Ponciano - A01784461
 #### Cesar Antonio Espinosa Madrid - A01799815
+
+## Link del Video Demostrativo
+https://youtu.be/-KYYg3kF_G0 
