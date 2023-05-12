@@ -126,10 +126,13 @@ def move():
             # Fantasmas mas listos:
             # Al cambiar la direccion del movimiento del fantasma, el sentido del movimiento depende de la posicion del pacman,
             # siguiendolo hacia arriba/abajo o hacia la derecha/izquierda aleatoriamente.
-            if pacman.x <= point.x or pacman.y <= point.y:
+            if pacman.x <= point.x and pacman.y <= point.y:
                 plan = choice([options[1],options[3]])
-
-            elif pacman.x > point.x or pacman.y > point.y:
+            elif pacman.x <= point.x and pacman.y >= point.y:
+                plan = choice([options[1],options[2]])
+            elif pacman.x >= point.x and pacman.y <= point.y:
+                plan = choice([options[0],options[3]])
+            elif pacman.x >= point.x and pacman.y >= point.y:
                 plan = choice([options[0],options[2]])
             
             #El factor speed aumenta el avance de los fantasmas en cada repeticion    
